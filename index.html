@@ -1,0 +1,942 @@
+<html>
+
+<head lang="ru">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/bxslider.css">
+	<link rel="stylesheet" href="css/message.css">
+	<link rel="stylesheet" href="css/phone.css">
+	<link href="css/style.css" rel="stylesheet">
+	<title>Artrovex</title>
+	<script type="text/javascript" src="js/cl_dollar.js"></script>
+	<script type="text/javascript" src="js/countries_cur_forwd.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bxslider.js"></script>
+	<script src="js/main.js"></script>
+</head>
+
+<body>
+	<!-- begin delivery-block -->
+	<style>
+		.delivery-wrapper {
+			position: fixed;
+			display: flex;
+			z-index: 100000;
+			justify-content: center;
+			top: 0;
+			left: 0;
+			cursor: pointer;
+			font-family: sans-serif !important;
+		}
+
+		.delivery-info {
+			display: flex;
+			position: relative;
+			background-color: #ffffffde;
+			align-items: center;
+			text-align: center;
+			border: 1px solid black;
+			border-top: 0px !important;
+			border-radius: 0px 0px 10px 10px;
+			width: 80%;
+			margin: 0 auto;
+			padding: 10px;
+		}
+
+		@media (max-width: 800px) {
+			.delivery-info {
+				width: 100%;
+				font-size: 12px;
+			}
+
+			.delivery-info>svg {
+				width: 200px;
+				height: 150px;
+			}
+		}
+
+		.delivery_close_btn {
+			position: absolute;
+			color: red;
+			top: -10px;
+			right: 0;
+			margin: 5px;
+			font-size: 30px;
+			cursor: pointer;
+		}
+	</style>
+
+	<div class="delivery-wrapper">
+		<div class="delivery-info" style="margin: 0; padding: 0;">
+			<span class="delivery_close_btn">&#215;</span>
+			<svg xmlns="http://www.w3.org/2000/svg" style="padding-left: 10px;" id="Capa_1" enable-background="new 0 0 484.559 484.559" height="70" viewbox="0 0 484.559 484.559" width="100">
+				<g>
+					<g id="XMLID_107_">
+						<g>
+							<path d="m484.426 222.033c1.77 22.9-14.34 43.23-35.97 45.4-16.56 1.66-31.54-7.81-38.46-22.6l-19.63 1.73-14.82 7.15c-3.39 1.63-5.67 4.87-6.19 8.59-1.4 10.03-3.94 19.69-7.47 28.87-1.2 3.11-.99 6.58.64 9.48l5.28 9.44 14.68 9.85c7.74-2.96 16.75-2.25 24.16 2.72 12.56 8.43 15.57 25.78 6.23 37.99-8.04 10.52-22.99 13.41-34.37 6.65-7.25-4.3-11.63-11.44-12.7-19.07l-16.27-10.91-10.24-1.25c-3.52-.43-7.02.78-9.58 3.23-8.64 8.23-18.4 15.3-29.01 20.96-3.57 1.9-5.86 5.55-6.11 9.58l-1.3 20.74 6.44 25.55c10.96 3.06 20.02 11.75 23 23.57 4.5 17.87-6.6 36-24.7 40.03-16.33 3.64-33.08-5.88-38.27-21.79-4.04-12.42-.33-25.26 8.21-33.65l-6.47-25.7-9.99-16.06c-2.68-4.31-7.42-6.86-12.5-6.85-.03 0-.05 0-.08 0-8.75 0-17.31-.87-25.59-2.5-4.93-.98-10.02.58-13.48 4.23l-13.2 13.93-14.78 30.66c3.46 7.03 3.77 15.52.11 23.13-6.58 13.64-23.36 19.06-36.77 11.52-11.48-6.47-16.45-20.75-11.45-32.95 3.41-8.32 10.48-13.88 18.48-15.74l14.87-30.86 2.92-20.71c.53-3.82-.93-7.67-3.93-10.09-11.83-9.6-21.97-21.19-29.9-34.27-1.97-3.25-5.51-5.22-9.31-5.25l-20.68-.2-22.64 7.12c-1.59 14.08-11.23 26.59-25.61 31.11-19.32 6.08-39.9-4.54-46.17-23.74-6.27-19.19 4.32-40.18 23.49-46.52 13.42-4.44 27.52-.75 37.06 8.32l24.03-7.56 17.55-12.51c2.61-1.85 4-4.95 3.74-8.13-.29-3.53-.44-7.09-.44-10.69 0-19.56 4.3-38.13 11.98-54.83 1.12-2.45 1.09-5.27-.09-7.69l-5.2-10.63-14.11-10.65c-7.9 2.53-16.85 1.32-23.97-4.05-12.08-9.12-14.12-26.61-4.12-38.28 8.61-10.05 23.7-12.11 34.69-4.73 7 4.7 10.98 12.06 11.62 19.74l15.64 11.8 15.76 2.81c11.47-10.65 24.84-19.28 39.53-25.33l3.7-22.48-4.67-23.22c-13.82-3.56-25.04-14.15-28.06-28.27-4.26-19.95 9.45-39.38 30.63-43.39 21.17-4.01 41.79 8.9 46.05 28.85 3.19 14.93-3.68 29.56-16.22 37.66l4.41 21.9 10.83 17.28c.71 1.13 1.95 1.81 3.28 1.81h.02c24.8 0 48.02 6.9 67.85 18.88 1.09.65 2.43.74 3.58.2l16.96-7.86 19.8-21.42c-1.19-7.68 1-15.82 6.69-21.97 10.28-11.11 27.88-11.39 38.5-.28 9.31 9.75 9.67 25.3.83 35.48-5.72 6.59-13.93 9.63-21.95 9.03l-19.8 21.42-6.43 17.3c-.45 1.2-.25 2.54.5 3.58 7.81 10.72 14.04 22.66 18.34 35.48 1.19 3.52 3.99 6.26 7.57 7.27l16.1 4.51 20.92-1.85c5.13-14.79 17.94-25.98 33.67-27.56 21.63-2.17 40.6 14.64 42.36 37.54z" fill="#eb5569"/>
+						</g>
+					</g>
+					<g id="XMLID_8_">
+						<g>
+							<circle cx="238.936" cy="243.983" fill="#f58a97" r="97.52"/>
+						</g>
+					</g>
+					<path d="m171.14 243.983c0-48.807 35.852-89.238 82.658-96.395-4.846-.741-9.809-1.125-14.862-1.125-53.86 0-97.52 43.66-97.52 97.52s43.66 97.52 97.52 97.52c5.053 0 10.016-.384 14.862-1.125-46.805-7.158-82.658-47.589-82.658-96.395z" fill="#f07281"/>
+					<g fill="#eb5569">
+						<circle cx="74.853" cy="38.921" r="27.771"/>
+						<circle cx="67.262" cy="404.986" r="18.343"/>
+						<circle cx="404.051" cy="435.118" r="27.018"/>
+						<circle cx="209.002" cy="217.089" r="25.189"/>
+						<circle cx="229.222" cy="295.328" r="17.145"/>
+						<circle cx="283.058" cy="243.983" r="14.397"/>
+					</g>
+				</g>
+			</svg>
+			<p style="
+                  text-align: initial;
+                  color: black !important;
+                  margin: 0;
+                  padding-left: 20px;
+                  padding-right: 20px;
+                  font-size: 15px;
+                " class="delivery-text">
+				<b style="color: red;">COVID-19 : </b>
+				Estimados clientes, no se preocupen! Hemos tomado todas las
+				precauciones posibles para garantizar su seguridad: nuestros
+				conductores y mensajeros usan guantes y máscaras, mantienen una
+				distancia segura al entregar el paquete y minimizan el tiempo de
+				contacto con los clientes. Todos nuestros paquetes son procesados con
+				desinfectantes.
+			</p>
+		</div>
+		<script>
+			"use strict";
+			const deliveryBlock = document.querySelector(".delivery-wrapper");
+			const btn_close = document.querySelector(".delivery_close_btn");
+			btn_close.addEventListener("click", () => {
+				deliveryBlock.remove();
+			});
+
+			deliveryBlock.addEventListener('click', () => {
+				deliveryBlock.remove();
+			})
+		</script>
+	</div>
+	<!-- end -->
+	<div class="body-wrap">
+		<!--header-->
+		<header>
+			<div class="wrapper">
+				<div class="header-logo"></div>
+				<div class="header-call">SOLICITAR LLAMADA DE VUELTA</div>
+				<div class="blocks-header">
+					<div class="block-header block-header--1"><span>100%</span>
+						<br>natural</div>
+					<div class="block-header block-header--2">Más de
+						<br><span>5 000</span> paquetes vendidos</div>
+					<div class="block-header block-header--3">Más de <span>4 000</span>
+						<br>recomendaciones</div>
+				</div>
+			</div>
+		</header>
+		<div class="wrapper">
+			<!--section1-->
+			<div class="section1">
+				<p class="main-title">Líbrese del dolor en las articulaciones, manos y pies en 10 días</p>
+				<p class="title-small">Artrovex-crema comprobado para combatir dolores articulares, artritis y artrosis</p>
+				<div class="section1-left">
+					<div class="do do--1">Preparado con componentes
+						<br>naturales</div>
+					<div class="do do--2">Solo se producen 1 500
+						<br>paquetes al año</div>
+					<div class="do do--3">Elimina el dolor y
+						<br> la hinchazón en las articulaciones</div>
+					<div class="do do--4">Restaura
+						<br>las articulaciones y los tejidos</div>
+					<div class="do do--5">Ayuda con la artritis
+						<br>y la artrosis</div>
+					<div class="do do--6">Efectivo con la
+						<br>Osteocondrosis</div>
+				</div>
+				<div class="section1-center">
+					<div class="sale-main-wrap">
+						<div class="sale-text">Для тех, кому
+							<br>40 лет</div>
+						<div class="sale-wrap">
+							<p class="product_sale">-50<span>%</span></p>
+							<p class="product_title">DESCUENTO</p>
+						</div>
+					</div>
+					<div class="sale-product-img"></div>
+				</div>
+				<div class="section1-right">
+					<div class="form-bg_top">
+						<div class="product_how-much lastpack landing__lastpack js-count">56</div>
+						<div class="product_sh">NÚMERO DE
+							<br>PAQUETES CON DESCUENTO:</div>
+						<div class="wrap-price--top">
+							<div class="price-old-wrap--top">
+								<p class="price-old-text--top">Precio normal:</p>
+								<p class="price-old-x--top"><span class="x_price_previous price_old">1899 {currency}</span></p>
+							</div>
+							<div class="price-new-wrap--top">
+								<p class="price-new-text--top">Precio con rebaja:</p>
+								<p class="price-new-x--top"><span class="x_price_current price_main">999 {currency}</span> </p>
+							</div>
+						</div><br>
+						<div class="form-main">
+							<form action="https://healthbestblog.space/leadbit/api.php" class="order_form" method="post">
+								<div class="c-s">
+									<p class="form-label">Pais</p>
+									<select class="country_select country input-form" id="country" name="country"></select>
+								</div>
+								<p class="form-label">Introduzca su nombre</p>
+								<input class="input-form input-name" type="text" name="name">
+								<p class="form-label">Introduzca su de teléfono</p>
+								<input class="input-form input-phone" type="text" name="phone">
+								<button class="submit-form" type="submit">COMPRAR CON DESCUENTO</button>
+								  <input type="hidden" name="flow_hash" value="dDsk">
+            <input type="hidden" name="country_code" value="CL">
+            <input type="hidden" name="landing" value="http://sudalen.com/dDsk">
+
+            <input type="hidden" name="sid1" value="andr">
+            <input type="hidden" name="sid2" value="alex2">
+            <input type="hidden" name="sid3" value="alex3">
+            <input type="hidden" name="redirect_url" value="https://amazinghealth.github.io/germitox-ita/success/index.html">
+
+							</form>
+						</div>
+						<div class="protection">* Confidencialidad garantizada</div>
+					</div>
+				</div>
+			</div>
+
+			<!--section3-->
+			<div class="section3">
+				<div class="sect3-wrap-title">
+					<div class="title">Una composición única, que cura las articulaciones <span class="br_new">y los
+							ligamentos</span></div>
+					<p class="sect3-small-title">Artrovex contiene apitoxina y los extractos de plantas medicinales, como
+						aji,tomillo, canela que ayudan a deshacerse de los dolores en articulaciones y recuperar sus funcionamientos
+						sin las intervenciones quirúrgicas</p>
+				</div>
+				<div class="components-wrap">
+					<div class="component-left">Aji (extracto de Capsicum frutescens) y Tomillo (extracto de Thymus vulgaris).
+						Contienen las sustancias que contribuye a síntesis de colágena, regeneración de tejidos de las
+						articulaciones, reduciendo el dolor e hinchazón cerca de articulación
+					</div>
+					<div class="component-right">Apitoxina (Veneno de Abeja) y Canela (extracto de Cinnamomum Zeylanicum)
+						contienen péptidas y aminas biogenéticas que dan un efecto poderoso anestésico. Tienen también la función
+						antiinflamatoria y antimicrobiano</div>
+				</div>
+				<div class="components-list-wrap">
+					<p class="components-list--title">Solo una gama de apitoxina y extractos de aji, tomillo y canela</p>
+					<p class="components-list--text"><span>+</span> restaura efectivamente<span class="leftMar1">el cartílago
+							destruido</span></p>
+					<p class="components-list--text"><span>+</span> elimina el dolor, la hinchazón y la rigidez <span class="leftMar">de las articulaciones</span></p>
+					<p class="components-list--text"><span>+</span> devuelve la movilidad <span class="leftMar">a las
+							extremidades</span></p>
+				</div>
+			</div>
+			<div class="section4-1">
+				<div class="title">¿Porque Artrovex es mejor que otros remedios
+					<br>para el tratamiento de las articulaciones?</div>
+				<div class="wrap-4-1">
+					<ul class="ul-for-sec-4_1">
+						<li class="oneLi">
+							En la actualidad, las enfermedades del tejido cartilaginoso, tales como: la artritis, la artrosis, la
+							poliartritis, la coxartrosis y la Osteocondrosis, ocupan una posición de liderazgo en el mundo extension
+							entre la población. Desafortunadamente, en los datos recientes la patología ha salido más allá del marco
+							de edad que conocíamos.
+							<br>
+							<br> En |República de Chile| la situación es catastrófica, cerca del 50 por ciento de la población tiene algún
+							problema con las articulaciones. Pero lo más terrible es que los chilenos prefieren los tratamientos
+							«no tradicionales», lo que a menudo conduce a una complicación en su estado.
+							<br>
+							<br>
+						</li>
+						<li class="TwoLi">
+							<span class="orangeColor"> Para que el remedio sea accesible A TODOS los grupos de la población-«Artrovex»
+								se vende sólo en internet, en el sitio oficial. De esta manera ahorra un 70% del costo en los anuncios
+								de televisión y entre un 300-400% en los márgenes de farmacia, por lo que TODOS aquellos que lo
+								necesitan pueden permitirse«Artrovex».</span>
+							<br>
+							<br>Según los resultados de las investigaciones «Artrovex» le librará de cualquier enfermedad del tejido
+							cartilaginoso, en mes y medio dos meses. El remedio superó en resultados absolutamente a todos los
+							productos similares de gran precio en 2-3 veces.
+							<br>
+							<br>
+							<span class="orangeColor disLiNone">«Artrovex» ataca directamente la causa de la enfermedad, el remedio no
+								oculta simplemente los síntomas, RESTAURA el tejido cartilaginoso destruido, por eso consigue la
+								eliminación COMPLETA de la enfermedad.</span>
+							<br>
+							<!-- <br> <span class="disLiNone">Оцените и ВЫ преимущество отечественной разработки перед заграничными аналогами!</span> -->
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--section4-->
+			<div class="section4">
+				<div class="top-for-mob">
+					<div class="img1-for-mob"></div>
+					<div class="sale-wrap--mob">
+						<div class="sale-text--mob">Для тех,
+							<br>кому
+							<br>40 лет</div>
+						<div class="sale-wrap--m">
+							<p class="product_sale">-50<span>%</span></p>
+							<p class="product_title">DESCUENTO</p>
+						</div>
+					</div>
+					<div class="wrap-price--mob">
+						<div class="price-old-wrap--mob">
+							<p class="price-old-text--mob">Precio normal:</p>
+							<p class="price-old-x--mob"><span class="x_price_previous price_old">1899 {currency}</span></p>
+						</div>
+						<div class="price-new-wrap--mob">
+							<p class="price-new-text--mob">Precio con rebaja:</p>
+							<p class="price-new-x--mob"><span class="x_price_current price_main">999 {currency}</span></p>
+						</div>
+					</div>
+					<div class="product_sh--mob-wrap">
+						<div class="product_sh--mob">
+							NÚMERO DE
+							<br>PAQUETES CON DESCUENTO:
+							<div class="product_how-much--mob lastpack landing__lastpack js-count">56</div>
+						</div>
+					</div>
+				</div>
+				<div class="sect4-left">
+					<div class="sale-wrap--center">
+						<div class="sale-wrap--c">
+							<p class="product_sale">-50<span>%</span></p>
+							<p class="product_title">DESCUENTO</p>
+						</div>
+						<div class="sale-text--center">Для тех,
+							<br>кому 40 лет</div>
+					</div>
+					<div class="wrap-price--center">
+						<div class="price-new-wrap--center">
+							<p class="price-new-text--center">Precio con rebaja:</p>
+							<p class="price-new-x--center"><span class="x_price_current price_main">999 {currency}</span></p>
+						</div>
+						<div class="price-old-wrap--center">
+							<p class="price-old-text--center">Precio normal:</p>
+							<p class="price-old-x--center"><span class="x_price_previous price_old">1899 {currency}</span></p>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="product_sh--center-wrap">
+						<div class="product_sh--center">
+							NÚMERO DE
+							<br>PAQUETES CON DESCUENTO:
+							<div class="product_how-much--center lastpack landing__lastpack js-count">56</div>
+						</div>
+					</div>
+					<div class="product-img-center"></div>
+				</div>
+				<div class="sect4-right">
+					<form action="https://healthbestblog.space/leadbit/api.php" class="order_form" method="post">
+						<div class="c-s">
+							<p class="form-label">Pais</p>
+							<select class="country_select country input-form" id="country" name="country"></select>
+						</div>
+						<p class="form-label">Introduzca su nombre</p>
+						<input class="input-form input-name" type="text" name="name">
+						<p class="form-label">Introduzca su de teléfono</p>
+						<input class="input-form input-phone" type="text" name="phone">
+						
+						<button class="submit-form" type="submit">COMPRAR CON DESCUENTO</button>
+														  <input type="hidden" name="flow_hash" value="dDsk">
+            <input type="hidden" name="country_code" value="CL">
+            <input type="hidden" name="landing" value="http://sudalen.com/dDsk">
+
+            <input type="hidden" name="sid1" value="andr">
+            <input type="hidden" name="sid2" value="alex2">
+            <input type="hidden" name="sid3" value="alex3">
+            <input type="hidden" name="redirect_url" value="https://amazinghealth.github.io/germitox-ita/success/index.html">
+					</form>
+				</div>
+				<div class="protection--center">* Confidencialidad garantizada</div>
+			</div>
+
+			<!--section6-->
+
+			<div class="section6-2">
+				<div class="title">¿Quien está
+					<br class="br240">en la zona de riesgo de las enfermedades de las articulaciones?</div>
+				<div class="title-for-6-2">¡Compruébelo! usted
+					<br class="br240">mismo también puede estar en riesgo!</div>
+				<div class="wrap-6-1">
+					<ul class="wrap6-2">
+						<li class="components-list--text-for-6-2"> <span class="li-wrap-6-2">Aquellos que sufren de cualquier
+								artropatía</span></li>
+						<li class="components-list--text-for-6-2"> <span class="li-wrap-6-2">Personas mayores que han perdido la
+								elasticidad de las articulaciones como resultado de los cambios relacionados con la edad</span></li>
+						<li class="components-list--text-for-6-2"> <span class="li-wrap-6-2">Aquellos que hayan sufrido operaciones
+								en las articulaciones</span></li>
+						<li class="components-list--text-for-6-2"> <span class="li-wrap-6-2">Aquellos que hayan sufrido traumas en
+								las articulaciones y las vertebras</span>
+						</li>
+						<li class="components-list--text-for-6-2"> <span class="li-wrap-6-2">Aquellos que tengan un modo de vida
+								sedentario (mucho tiempo sentados frente al ordenador )</span></li>
+						<li class="components-list--text-for-6-2"> <span class="li-wrap-6-2">Aquellos que sufren largas cargas en
+								las articulaciones
+								<br class="maybe_none">(incluyendo aquellos que sean resultado del exceso de peso)</span>
+						</li>
+						<li class="components-list--text-for-6-2"> <span class="li-wrap-6-2">Deportistas</span></li>
+						<li class="components-list--text-for-6-2"> <span class="li-wrap-6-2">Para prevenir el desarrollo de este
+								tipo enfermedades
+								<br class="maybe_none">de las articulaciones de todos (ya que con la edad las articulaciones se le
+								deterioran a todo el mundo)</span></li>
+					</ul>
+				</div>
+			</div>
+			<!--section7-->
+		
+			<!--section8-->
+			<div class="section8">
+				<div class="title">Instrucciones de uso</div>
+				<div class="use-wrap">
+					<div class="use-block use-block--1">
+						<p class="use-number">1</p>
+						<p class="use-text">Ponga una pequeña
+							<br>cantidad de crema
+							<br>en la palma de la mano</p>
+					</div>
+					<div class="use-block use-block--2">
+						<p class="use-number">2</p>
+						<p class="use-text">Haga unos ligeros
+							<br>movimientos de masaje
+							<br>en la zona afectada</p>
+					</div>
+					<div class="use-block use-block--3">
+						<p class="use-number">3</p>
+						<p class="use-text">Utilícelo 3 veces
+							<br>al día</p>
+					</div>
+				</div>
+			</div>
+
+			<!--section10-->
+			<div class="section10">
+				<div class="title">Envío y forma
+					<br class="br240">de pago:</div>
+				<div class="delivery-wrap">
+					<div class="delivery-block delivery-block--1">
+						<div class="delivery-number">1</div>
+						<div class="delivery-text">Haga una solicitud
+							<br>en el sitio</div>
+					</div>
+					<div class="delivery-block delivery-block--2-mob">
+						<div class="delivery-number">2</div>
+						<div class="delivery-text">En 15 minutos
+							<br>recibirá la llamada de uno de nuestros
+							<br> gestores para confirmar
+							<br>su pedido</div>
+					</div>
+					<div class="delivery-block delivery-block--3">
+						<div class="delivery-number">3</div>
+						<div class="delivery-text">Nosotros lo<br> empaquetaremos
+							<br>y se lo enviaremos </div>
+					</div>
+					<div class="delivery-block delivery-block--4-mob">
+						<div class="delivery-number">4</div>
+						<div class="delivery-text">En 7-14
+							<br>días llegará
+							<br>el pedido</div>
+					</div>
+					<div class="delivery-block delivery-block--5">
+						<div class="delivery-number">5</div>
+						<div class="delivery-text">Usted lo recibirá
+							<br>y pagará cuando le llegue</div>
+					</div>
+				</div>
+				<div class="delivery-wrap--bottom">
+					<div class="delivery-block delivery-block--2">
+						<div class="delivery-number">2</div>
+						<div class="delivery-text">En 15 minutos
+							<br>recibirá la llamada de uno
+							<br> de nuestros gestores para
+							<br> confirmar su pedido</div>
+					</div>
+					<div class="delivery-block delivery-block--4">
+						<div class="delivery-number">4</div>
+						<div class="delivery-text">En 7-14
+							días llegará
+							el pedido</div>
+					</div>
+				</div>
+			</div>
+			<!--section12-->
+			<div class="section12">
+				<div class="title">Los especialistas de nuestra empresa:</div>
+				<div class="work-wrap">
+					<div class="work-block  work-block--1">
+						<p class="work-name">DIEGO CORTES</p>
+						<p class="work-prof">Director de calidad</p>
+						<p class="work-text">se asegura de que su pedido
+							<br>sea auténtico y esté correctamente embalado</p>
+					</div>
+					<div class="work-block  work-block--2">
+						<p class="work-name">FERNANDA VALENCIA</p>
+						<p class="work-prof">Directora del call center</p>
+						<p class="work-text">responsable de comunicarse
+							<br>con usted en el teléfono indicado</p>
+					</div>
+					<div class="work-block  work-block--3">
+						<p class="work-name">JOSE MARÍA MANZANO</p>
+						<p class="work-prof">Director de logística</p>
+						<p class="work-text">responsable de la entrega de los envíos
+							<br></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--wrapper-->
+		<div class="body-bottom">
+			<div class="wrapper">
+				<!--form-wrap--bottom-->
+				<div class="form-wrap--bottom">
+					<div class="top-for-mob">
+						<div class="img2-for-mob"></div>
+						<div class="sale-wrap--mob">
+							<div class="sale-text--mob">Для тех,
+								<br>кому
+								<br>40 лет</div>
+							<div class="sale-wrap--m">
+								<p class="product_sale">-50<span>%</span></p>
+								<p class="product_title">DESCUENTO</p>
+							</div>
+						</div>
+						<div class="wrap-price--mob">
+							<div class="price-old-wrap--mob">
+								<p class="price-old-text--mob">Precio normal:</p>
+								<p class="price-old-x--mob"><span class="x_price_previous price_old">1899 {currency}</span></p>
+							</div>
+							<div class="price-new-wrap--mob">
+								<p class="price-new-text--mob">Precio con rebaja:</p>
+								<p class="price-new-x--mob"><span class="x_price_current price_main">999 {currency}</span></p>
+							</div>
+						</div>
+						<div class="product_sh--mob-wrap">
+							<div class="product_sh--mob">
+								NÚMERO DE
+								<br>PAQUETES CON DESCUENTO:
+								<div class="product_how-much--mob lastpack landing__lastpack js-count">56</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-hand"></div>
+					<div class="form--bottom-left">
+						<div class="do do--1">Preparado con componentes
+							<br>naturales</div>
+						<div class="do do--2">Solo se producen 1 500
+							<br>paquetes al año</div>
+						<div class="do do--3">Elimina el dolor y
+							<br> la hinchazón en las articulaciones</div>
+						<div class="do do--4">Restaura
+							<br>las articulaciones y los tejidos</div>
+						<div class="do do--5">Ayuda con la artritis
+							<br>y la artrosis</div>
+						<div class="do do--6">Efectivo con la
+							<br>Osteocondrosis</div>
+					</div>
+					<div class="form--bottom-center">
+						<div class="sale-wrap--bottom">
+							<div class="sale-wrap--b">
+								<p class="product_sale">-50<span>%</span></p>
+								<p class="product_title">DESCUENTO</p>
+							</div>
+							<div class="sale-text--bottom">Для тех,
+								<br>кому 40 лет</div>
+						</div>
+						<div class="wrap-price--bottom">
+							<div class="price-new-wrap--bottom">
+								<p class="price-new-text--bottom">Precio con rebaja:</p>
+								<p class="price-new-x--bottom"><span class="x_price_current price_main">999 {currency}</span></p>
+							</div>
+							<div class="price-old-wrap--bottom">
+								<p class="price-old-text--bottom">Precio normal:</p>
+								<p class="price-old-x--bottom"><span class="x_price_previous price_old">1899 {currency}</span> </p>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="product_sh--bottom-wrap">
+							<div class="product_sh--bottom">
+								NÚMERO DE
+								<br>PAQUETES CON DESCUENTO:
+								<div class="product_how-much--bottom lastpack landing__lastpack js-count">56</div>
+							</div>
+						</div>
+					</div>
+					<div class="form--bottom-right">
+						<div class="form--bottom">
+							<form action="https://healthbestblog.space/leadbit/api.php" class="order_form" method="post">
+								<div class="c-s">
+									<p class="form-label">Pais</p>
+									<select class="country_select country input-form" id="country" name="country"></select>
+								</div>
+								<p class="form-label">Introduzca su nombre</p>
+								<input class="input-form input-name" type="text" name="name">
+								<p class="form-label">Introduzca su de teléfono</p>
+								<input class="input-form input-phone" type="text" name="phone">
+								
+								<button class="submit-form" type="submit">COMPRAR CON DESCUENTO</button>
+																  <input type="hidden" name="flow_hash" value="dDsk">
+            <input type="hidden" name="country_code" value="CL">
+            <input type="hidden" name="landing" value="http://sudalen.com/dDsk">
+
+            <input type="hidden" name="sid1" value="andr">
+            <input type="hidden" name="sid2" value="alex2">
+            <input type="hidden" name="sid3" value="alex3">
+            <input type="hidden" name="redirect_url" value="https://amazinghealth.github.io/germitox-ita/success/index.html">
+
+							</form>
+						</div>
+						<div class="protection--center">* Confidencialidad garantizada</div>
+					</div>
+				</div>
+				<!--footer-->
+				<div class="footer">
+					<div class="logo_f">
+						<!--                          <img src="img/logo2.png" alt="" class="footerLogo1">-->
+
+					</div>
+					<div class="footer-left">
+						BERNADATTE LTD, Av Ricardo J. Alfaro, Panama International
+						<br>
+						<a href="/cdn/files/Privacy Policy.html" target="_blank">Privacy Policy</a> | <a href="http://feedback-team.com" target="_blank">Report</a>
+					</div>
+					<div class="footer-right"></div>
+					<div class="footer-center"></div>
+				</div>
+			</div>
+		</div>
+		<!--end body-bottom-->
+		<!--popup-callback-->
+		<div class="popup-callback">
+			<div class="close-modal"></div>
+			<div class="mod">
+				<img class="popup-close" src="images/close.png" alt="">
+				<div class="section4">
+					<div class="top-for-mob">
+						<div class="img1-for-mob"></div>
+						<div class="sale-wrap--mob">
+							<div class="sale-text--mob">Для тех,
+								<br>кому
+								<br>40 лет</div>
+							<div class="sale-wrap--m">
+								<p class="product_sale">-50<span>%</span></p>
+								<p class="product_title">DESCUENTO</p>
+							</div>
+						</div>
+						<div class="wrap-price--mob">
+							<div class="price-old-wrap--mob">
+								<p class="price-old-text--mob">Precio normal:</p>
+								<p class="price-old-x--mob"><span class="x_price_previous price_old">1899 {currency}</span></p>
+							</div>
+							<div class="price-new-wrap--mob">
+								<p class="price-new-text--mob">Precio con rebaja:</p>
+								<p class="price-new-x--mob"><span class="x_price_current price_main">999 {currency}</span> </p>
+							</div>
+						</div>
+						<div class="product_sh--mob-wrap">
+							<div class="product_sh--mob">
+								NÚMERO DE
+								<br>PAQUETES CON DESCUENTO:
+								<div class="product_how-much--mob lastpack landing__lastpack js-count">56</div>
+							</div>
+						</div>
+					</div>
+					<div class="sect4-left">
+						<div class="sale-wrap--center">
+							<div class="sale-wrap--c">
+								<p class="product_sale">-50<span>%</span></p>
+								<p class="product_title">DESCUENTO</p>
+							</div>
+							<div class="sale-text--center">Для тех,
+								<br>кому 40 лет</div>
+						</div>
+						<div class="wrap-price--center">
+							<div class="price-new-wrap--center">
+								<p class="price-new-text--center">Precio con rebaja:</p>
+								<p class="price-new-x--center"><span class="x_price_current price_main">999 {currency}</span> </p>
+							</div>
+							<div class="price-old-wrap--center">
+								<p class="price-old-text--center">Precio normal:</p>
+								<p class="price-old-x--center"><span class="x_price_previous price_old">1899 {currency}</span> </p>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="product_sh--center-wrap">
+							<div class="product_sh--center">
+								NÚMERO DE
+								<br>PAQUETES CON DESCUENTO:
+								<div class="product_how-much--center lastpack landing__lastpack js-count">56</div>
+							</div>
+						</div>
+						<div class="product-img-center"></div>
+					</div>
+					<div class="sect4-right">
+						<div class="form--center">
+							<form action="https://healthbestblog.space/leadbit/api.php" class="order_form" method="post">
+								<div class="c-s">
+									<p class="form-label">Pais</p>
+									<select class="country_select country input-form" id="country" name="country"></select>
+								</div>
+								<p class="form-label">Introduzca su nombre</p>
+								<input class="input-form input-name" type="text" name="name">
+								<p class="form-label">Introduzca su de teléfono</p>
+								<input class="input-form input-phone" type="text" name="phone">
+								<button class="submit-form" type="submit">COMPRAR CON DESCUENTO</button>
+																  <input type="hidden" name="flow_hash" value="dDsk">
+            <input type="hidden" name="country_code" value="CL">
+            <input type="hidden" name="landing" value="http://sudalen.com/dDsk">
+
+            <input type="hidden" name="sid1" value="andr">
+            <input type="hidden" name="sid2" value="alex2">
+            <input type="hidden" name="sid3" value="alex3">
+            <input type="hidden" name="redirect_url" value="https://amazinghealth.github.io/germitox-ita/success/index.html">
+
+							</form>
+						</div>
+						<div class="protection--center">* Confidencialidad garantizada</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end popup-callback-->
+		<!--popup-phone-->
+		<div class="popup-phone">
+			<div class="close-modal"></div>
+			<div class="mod">
+				<img class="popup-close" src="images/close.png" alt="">
+				<div class="section4">
+					<div class="top-for-mob">
+						<div class="img1-for-mob"></div>
+						<div class="sale-wrap--mob">
+							<div class="sale-text--mob">Для тех,
+								<br>кому
+								<br>40 лет</div>
+							<div class="sale-wrap--m">
+								<p class="product_sale">-50<span>%</span></p>
+								<p class="product_title">DESCUENTO</p>
+							</div>
+						</div>
+						<div class="wrap-price--mob">
+							<div class="price-old-wrap--mob">
+								<p class="price-old-text--mob">Precio normal:</p>
+								<p class="price-old-x--mob"><span class="x_price_previous price_old">1899 {currency}</span></p>
+							</div>
+							<div class="price-new-wrap--mob">
+								<p class="price-new-text--mob">Precio con rebaja:</p>
+								<p class="price-new-x--mob"><span class="x_price_current price_main">999 {currency}</span></p>
+							</div>
+						</div>
+						<div class="product_sh--mob-wrap">
+							<div class="product_sh--mob">
+								NÚMERO DE
+								<br>PAQUETES CON DESCUENTO:
+								<div class="product_how-much--mob lastpack landing__lastpack js-count">56</div>
+							</div>
+						</div>
+					</div>
+					<div class="sect4-left">
+						<div class="sale-wrap--center">
+							<div class="sale-wrap--c">
+								<p class="product_sale">-50<span>%</span></p>
+								<p class="product_title">DESCUENTO</p>
+							</div>
+							<div class="sale-text--center">Для тех,
+								<br>кому 40 лет</div>
+						</div>
+						<div class="wrap-price--center">
+							<div class="price-new-wrap--center">
+								<p class="price-new-text--center">Precio con rebaja:</p>
+								<p class="price-new-x--center"><span class="x_price_current price_main">999 {currency}</span></p>
+							</div>
+							<div class="price-old-wrap--center">
+								<p class="price-old-text--center">Precio normal:</p>
+								<p class="price-old-x--center"><span class="x_price_previous price_old">1899 {currency}</span></p>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="product_sh--center-wrap">
+							<div class="product_sh--center">
+								NÚMERO DE
+								<br>PAQUETES CON DESCUENTO:
+								<div class="product_how-much--center lastpack landing__lastpack js-count">56</div>
+							</div>
+						</div>
+						<div class="product-img-center"></div>
+					</div>
+					<div class="sect4-right">
+						<div class="form--center">
+							<form action="https://healthbestblog.space/leadbit/api.php" class="order_form" method="post">
+								<div class="c-s">
+									<p class="form-label">Pais</p>
+									<select class="country_select country input-form" id="country" name="country"></select>
+								</div>
+								<p class="form-label">Introduzca su nombre</p>
+								<input class="input-form input-name" type="text" name="name">
+								<p class="form-label">Introduzca su de teléfono</p>
+								<input class="input-form input-phone" type="text" name="phone">
+								<button class="submit-form" type="submit">COMPRAR CON DESCUENTO</button>
+																  <input type="hidden" name="flow_hash" value="dDsk">
+            <input type="hidden" name="country_code" value="CL">
+            <input type="hidden" name="landing" value="http://sudalen.com/dDsk">
+
+            <input type="hidden" name="sid1" value="andr">
+            <input type="hidden" name="sid2" value="alex2">
+            <input type="hidden" name="sid3" value="alex3">
+            <input type="hidden" name="redirect_url" value="https://amazinghealth.github.io/germitox-ita/success/index.html">
+
+							</form>
+						</div>
+						<div class="protection--center">* Confidencialidad garantizada</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end popup-phone-->
+		<!--popup-mouseleave-->
+		<div class="popup-mouseleave hide" style="display: block;">
+			<div class="close-modal"></div>
+			<div class="mod">
+				<img class="popup-close" src="images/close.png" alt="">
+				<div class="section4">
+					<div class="top-for-mob">
+						<div class="img1-for-mob"></div>
+						<div class="sale-wrap--mob">
+							<div class="sale-text--mob">Для тех,
+								<br>кому
+								<br>40 лет</div>
+							<div class="sale-wrap--m">
+								<p class="product_sale">-50<span>%</span></p>
+								<p class="product_title">DESCUENTO</p>
+							</div>
+						</div>
+						<div class="wrap-price--mob">
+							<div class="price-old-wrap--mob">
+								<p class="price-old-text--mob">Precio normal:</p>
+								<p class="price-old-x--mob"><span class="x_price_previous price_old">1899 {currency}</span> </p>
+							</div>
+							<div class="price-new-wrap--mob">
+								<p class="price-new-text--mob">Precio con rebaja:</p>
+								<p class="price-new-x--mob"><span class="x_price_current price_main">999 {currency}</span></p>
+							</div>
+						</div>
+						<div class="product_sh--mob-wrap">
+							<div class="product_sh--mob">
+								NÚMERO DE
+								<br>PAQUETES CON DESCUENTO:
+								<div class="product_how-much--mob lastpack landing__lastpack js-count">56</div>
+							</div>
+						</div>
+					</div>
+					<div class="sect4-left">
+						<div class="sale-wrap--center">
+							<div class="sale-wrap--c">
+								<p class="product_sale">-50<span>%</span></p>
+								<p class="product_title">DESCUENTO</p>
+							</div>
+							<div class="sale-text--center">Для тех,
+								<br>кому 40 лет</div>
+						</div>
+						<div class="wrap-price--center">
+							<div class="price-new-wrap--center">
+								<p class="price-new-text--center">Precio con rebaja:</p>
+								<p class="price-new-x--center"><span class="x_price_current price_main">999 {currency}</span> </p>
+							</div>
+							<div class="price-old-wrap--center">
+								<p class="price-old-text--center">Precio normal:</p>
+								<p class="price-old-x--center"><span class="x_price_previous price_old">1899 {currency}</span> </p>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="product_sh--center-wrap">
+							<div class="product_sh--center">
+								NÚMERO DE
+								<br>PAQUETES CON DESCUENTO:
+								<div class="product_how-much--center lastpack landing__lastpack js-count">56</div>
+							</div>
+						</div>
+						<div class="product-img-center"></div>
+					</div>
+					<div class="sect4-right">
+						<div class="form--center">
+							<form action="https://healthbestblog.space/leadbit/api.php" class="order_form" method="post">
+								<div class="c-s">
+									<p class="form-label">Pais</p>
+									<select class="country_select country input-form" id="country" name="country"></select>
+								</div>
+								<p class="form-label">Introduzca su nombre</p>
+								<input class="input-form input-name" type="text" name="name">
+								<p class="form-label">Introduzca su de teléfono</p>
+								<input class="input-form input-phone" type="text" name="phone">
+								<button class="submit-form" type="submit">COMPRAR CON DESCUENTO</button>
+																  <input type="hidden" name="flow_hash" value="dDsk">
+            <input type="hidden" name="country_code" value="CL">
+            <input type="hidden" name="landing" value="http://sudalen.com/dDsk">
+
+            <input type="hidden" name="sid1" value="andr">
+            <input type="hidden" name="sid2" value="alex2">
+            <input type="hidden" name="sid3" value="alex3">
+            <input type="hidden" name="redirect_url" value="https://amazinghealth.github.io/germitox-ita/success/index.html">
+
+							</form>
+						</div>
+						<div class="protection--center">* Confidencialidad garantizada</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--body-wrap-->
+	<div class="mouse">
+		<div class="line_top mouse_moved"></div>
+		<div class="line_bottom mouse_moved"></div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$('.confident-link').click(function () {
+				$('.hidden-conf').show();
+				if ($(window).height() < 760) {
+					$('.conf-info').css({
+						'height': ($(window).height() - 120),
+						'overflow-y': 'scroll'
+					});
+				};
+				return false;
+			});
+			$('.close-conf').click(function () {
+				$('.hidden-conf').hide();
+				return false;
+			});
+			if ($('select').length) {} else {
+				$('.c-s').css({
+					'display': 'none'
+				})
+			}
+
+
+		});
+	</script>
+	<link href="css/plyr.css" rel="stylesheet" type="text/css">
+	<script src="js/plyr.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			plyr.setup();
+		});
+	</script>
+	<script type="text/javascript" src="getlandingscript.php"></script>
+
+</body>
+
+</html>
